@@ -1,0 +1,141 @@
+{% load static %}
+
+<!-- ***IMPORTANT***
+This is THE most messy CSS you'll ever see.
+I am not good at designing user interface.
+Believe me when I say it. Part of CSS is embedded while
+part of it is in the static file. -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Accordion</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+        <link rel="shortcut icon" type="image/jpg" href="/static/accordion/img/logo.png"/>
+        <link href="/static/accordion/styles.css" rel="stylesheet">
+        {% block Script %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-fluid" style="background-color: rgb(41, 66, 52); color: white; text-align: center; height: 120px; position: fixed; top: 0%; box-shadow: 0px 0px 10px black;">
+            <div class="row">
+                <div class="col-1">
+                    <img src="/static/accordion/img/logo.png" alt="logo" class="logo">
+                </div>
+                <div class="col-3" style="text-align: left;">
+                    <br>
+                    <a id="name" href="{% url 'index' %}">
+                        Accordion
+                    </a>
+                </div>
+                <div class="col-2">
+                    <br>
+                    <br>
+                    <a class="play" href="{% url 'index' %}">Play</a>
+                </div>
+                <div class="col-2">
+                    <br>
+                    <br>
+                    <a class="play" href="{% url 'index' %}">Forum</a>
+                </div>
+                <!-- if authenticated -->
+                {% if user.is_authenticated %}
+                    <div class="col-4" style="text-align: right;">
+                        <br>
+                        <a class="me" href="/">
+                            me
+                        </a>
+                        <br>
+                        <a class="me" href="{% url 'logout' %}">
+                            Logout
+                        </a>
+                    </div>
+                <!-- else -->
+                {% else %}
+                    <div class="col-4" style="text-align: right;">
+                        <br>
+                        <a class="me" href="{% url 'login' %}">
+                            Login
+                        </a>
+                        <br>
+                        <a class="me" href="{% url 'register' %}">
+                            Register
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+
+        <div style="height: 120px;"></div>
+        {% block body %}
+        {% endblock %}
+
+        
+        <div class="container-fluid" style="background-color: rgb(41, 66, 52); color: white; text-align: center; height: 380px; box-shadow: 0px 0px 10px black;">
+            <div class="row">
+                <div class="col-2">
+                    
+                </div>
+                <div class="col-2">
+                    <h6 class="head">Explore</h6>
+                    <div class="pad">
+                        <a href="{% url 'index' %}" class="btm-thi">Accordion</a>
+                    </div>
+                    <div class="pad">
+                        <a class="btm-thi">Forum</a>
+                    </div>
+                    <!-- <h6>Accordion</h6>
+                    <h6>Forum</h6> -->
+                    
+                </div>
+                <div class="col-2">
+                    <h6 class="head">About</h6>
+                    <div class="pad">
+                        <a class="btm-thi">Author</a>
+                    </div>
+                    <div class="pad">
+                        <a class="btm-thi">Credits</a>
+                    </div>
+                    <div class="pad">
+                        <a class="btm-thi">Biscuit</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h6 class="head">Contact</h6>
+                    <div class="pad">
+                        <a class="btm-thi">Email</a>
+                    </div>
+                    <div class="pad">
+                        <a href="https://linkedin.com/in/ryan-zhang-8989771a9" target="_blank" class="btm-thi">LinkedIn</a>
+                    </div>
+                    <div class="pad">
+                        <a href="https://github.com/bushesOfLove" target="_blank" class="btm-thi">GitHub</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h6 class="head">Other</h6>
+                    <div class="pad">
+                        <a class="btm-thi">Source Code</a>
+                    </div>
+                    <div class="pad">
+                        <a class="btm-thi">Copyright</a>
+                    </div>
+                    <div class="pad">
+                        <a class="btm-thi">ʕ•ᴥ•ʔ</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    
+                </div>
+            </div>
+            <div style="text-align: left; padding-left: 2%;">
+                <img src="/static/accordion/img/avatar.png" alt="avatar" class="avatar">
+                <br>
+                <br>
+                <span style="font-family:monospace; text-align: left;">&copy2021 <a href="https://github.com/bushesOfLove" target="_blank" class="inerthover">bushesOfLove</a></span>
+            </div>
+        </div>
+    </body>
+</html>

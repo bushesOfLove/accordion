@@ -1,0 +1,81 @@
+body {
+    background-color: #ffd700;
+}
+
+h1 {
+    font-size: 10vw;
+    text-align: center;
+    font-weight: 500;
+    padding: 5%;
+}
+
+.logo {
+    height: 6vw;
+}
+
+#name {
+    font-family: 'Monoton', serif;
+    font-size: 3vw;
+    color: whitesmoke;
+    text-shadow: 0.5vw 0.5vw 0.5vw rgb(90, 255, 118);
+}
+
+#name:hover {
+    color: rgb(90, 255, 118);
+    text-shadow: none;
+    text-decoration: none;
+}
+
+.play {
+    font-family: 'Monoton', serif;
+    font-size: 2vw;
+    color: white;
+}
+
+.play:hover {
+    text-decoration: none;
+    color: lightgreen;
+}
+
+.me {
+    color: white;
+    font-size: 1vw;
+}
+
+.me:hover {
+    text-decoration: none;
+    color: aquamarine;
+}
+
+.head {
+    color: rgb(195, 195, 195);
+    padding-top: 5%;
+}
+
+.pad {
+    padding-top: 11%;
+    color: white;
+}
+
+.btm-thi {
+    font-weight: 500;
+    color: white;
+}
+
+.btm-thi:hover {
+    text-decoration: none;
+    color: wheat;
+}
+
+.avatar {
+    height: 5vw;
+}
+
+.inerthover {
+    color: white;
+}
+
+.inerthover:hover {
+    text-decoration: none;
+    color: black;
+}
