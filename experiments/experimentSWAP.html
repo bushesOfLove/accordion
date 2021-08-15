@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const start = document.querySelector("#start");
+                const one = document.querySelector("#one");
+                console.log(one.style.display);
+                const two = document.querySelector("#two");
+                const three = document.querySelector("#three");
+                let boo = 10;
+
+                start.onclick = () => {
+                    while (boo--) {
+                        setTimeout(() => {
+                            console.log("HERE");
+                        }, 2000);
+                    }
+                    // while (boo) {
+                    //     // if (one.style.display === 'inline') {
+                    //     //     one.style.display = 'none';
+                    //     //     two.style.display = 'inline';
+                    //     // }
+                    //     // else if (two.style.display === 'inline') {
+                    //     //     two.style.display = 'none';
+                    //     //     three.style.display = 'inline';
+                    //     // }
+                    //     // else if (three.style.display === 'inline') {
+                    //     //     three.style.display = 'none';
+                    //     //     one.style.display = 'inline';
+                    //     // } else {
+                    //     //     alert("WAHT");
+                    //     // }
+                    // }
+                }
+            });
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div style="position: absolute; top: 50%; left: 50%; display: inline;" id="one">
+            <p>1</p>
+        </div>
+        <div style="position: absolute; top: 50%; left: 50%; display: none;" id="two">
+            <p>2</p>
+        </div>
+        <div style="position: absolute; top: 50%; left: 50%; display: none;" id="three">
+            <p>3</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <button id="start" style="font-size: 50px;">start</button>
+        </div>
+    </body>
+</html>
