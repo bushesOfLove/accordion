@@ -59,3 +59,9 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "accordion/register.html")
+
+def forum(request):
+    return render(request, "accordion/forum.html")
+
+def demo(request):
+    return render(request, "accordion/demo.html")

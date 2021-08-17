@@ -25,7 +25,7 @@ part of it is in the static file. -->
                 </div>
                 <div class="col-3" style="text-align: left;">
                     <br>
-                    <a id="name" href="{% url 'index' %}">
+                    <a id="name" href="{% url 'demo' %}">
                         Accordion
                     </a>
                 </div>
@@ -37,7 +37,7 @@ part of it is in the static file. -->
                 <div class="col-2">
                     <br>
                     <br>
-                    <a class="play" href="{% url 'index' %}">Forum</a>
+                    <a class="play" href="{% url 'forum' %}">Forum</a>
                 </div>
                 <!-- if authenticated -->
                 {% if user.is_authenticated %}
@@ -69,6 +69,18 @@ part of it is in the static file. -->
         
 
         <div style="height: 120px;"></div>
+
+
+        <!-- Pop up Box To show email -->
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Email</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    ryanzhang105136@gmail.com
+                </div>
+            </div>
+        </div>
         {% block body %}
         {% endblock %}
 
@@ -84,7 +96,7 @@ part of it is in the static file. -->
                         <a href="{% url 'index' %}" class="btm-thi">Accordion</a>
                     </div>
                     <div class="pad">
-                        <a class="btm-thi">Forum</a>
+                        <a href="{% url 'forum' %}" class="btm-thi">Forum</a>
                     </div>
                     <!-- <h6>Accordion</h6>
                     <h6>Forum</h6> -->
@@ -93,22 +105,22 @@ part of it is in the static file. -->
                 <div class="col-2">
                     <h6 class="head">About</h6>
                     <div class="pad">
+                        <a href="{% url 'demo' %}" class="btm-thi">DEMO</a>
+                    </div>
+                    <div class="pad">
                         <a class="btm-thi">Author</a>
                     </div>
                     <div class="pad">
                         <a class="btm-thi">Credits</a>
                     </div>
-                    <div class="pad">
-                        <a class="btm-thi">Biscuit</a>
-                    </div>
                 </div>
                 <div class="col-2">
                     <h6 class="head">Contact</h6>
                     <div class="pad">
-                        <a class="btm-thi">Email</a>
+                        <a href="#popup1" class="btm-thi">Email</a>
                     </div>
                     <div class="pad">
-                        <a href="https://linkedin.com/in/ryan-zhang-8989771a9" target="_blank" class="btm-thi">LinkedIn</a>
+                        <a href="https://linkedin.com/in/ryan-zhang-" target="_blank" class="btm-thi">LinkedIn</a>
                     </div>
                     <div class="pad">
                         <a href="https://github.com/bushesOfLove" target="_blank" class="btm-thi">GitHub</a>
@@ -117,7 +129,7 @@ part of it is in the static file. -->
                 <div class="col-2">
                     <h6 class="head">Other</h6>
                     <div class="pad">
-                        <a class="btm-thi">Source Code</a>
+                        <a class="btm-thi" href="https://github.com/bushesOfLove/accordion" target="_blank">Source Code</a>
                     </div>
                     <div class="pad">
                         <a class="btm-thi">Copyright</a>
