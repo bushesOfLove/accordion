@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Sprite</title>
+        <style>
+
+            #sprite {
+                background: url('SpritepS.png');
+                width: 1580px;
+                height: 1580px;
+                animation: sprite 10s steps(26) infinite;
+                animation-play-state: paused;
+            }
+
+            @keyframes sprite {
+                to { 
+                    background-position: -41080px;
+                }
+            }
+
+            button {
+                font-size: 100px;
+                padding: 2%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sprite</h1>
+
+
+        <!-- <div class="sprite" title="Animated Accordion by Ryan"></div> -->
+        <div id="sprite" title="Animated Accordion by Ryan"></div>
+        <div style="text-align: center;">
+            <button onclick="HH()">HitchHicker</button>
+            <button onclick="continu()">Continue</button>
+            <button onclick="play()">Play</button>
+            <button onclick="pause()">Pause</button>
+            <button onclick="reset()">Reset</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="reverse()">Reverse</button>
+            <button onclick="see()">See</button>
+        </div>
+
+        <script>
+            var el = document.getElementById('sprite');
+            function HH() {
+                el.style.animation = 'none';
+                el.offsetHeight;
+                el.style.animation = null;
+                el.style.animationDirection = 'normal';
+                el.style.animationPlayState = 'running';
+                setTimeout(function() {
+                    el.style.animationPlayState = 'paused';
+                    el.style.animationDirection = 'reverse';
+                }, 9500);
+            }
+            function continu() {
+                el.style.animationPlayState = 'running';
+            }
+            function play() {
+                el.style.animationPlayState = 'running';
+            }
+            function pause() {
+                el.style.animationPlayState = 'paused';
+            }
+            function reset() {
+                el.style.animation = 'none';
+                el.offsetHeight; /* trigger reflow to apply the change immediately */
+                el.style.animation = null;
+            }
+            function stop() {
+                reset();
+                pause();
+            }
+            function reverse() {
+                if (el.style.animationDirection === 'reverse') {
+                    el.style.animationDirection = 'normal';
+                } else {
+                    el.style.animationDirection = 'reverse';
+                }
+            }
+            function see() {
+                console.log(el.style.animationPlayState);
+            }
+        </script>
+
+        <div style="padding-bottom: 10%;"></div>
+    </body>
+</html>

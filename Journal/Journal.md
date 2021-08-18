@@ -1,8 +1,8 @@
 # Journal
 
-##### This is a journal to keep track of the production of this website, and my ranting. 
+This is a journal to keep track of the production of this website. 
 
-##### I doubt that anyone's gonna read it.
+I doubt that anyone's gonna read it.
 
 Starting at *August 13th, 2021*
 
@@ -45,3 +45,23 @@ Hmm, I guess if you actually have that on your screen it would look better.
 ***Day 4***
 
 Today, I did nothing but to make the animation of the accordion. I made a GIF, 26 frames. It is a piece of work, but I am happy with the outcome.
+
+From
+![from](images/1t2.GIF)
+
+To
+![To](images/accordion.GIF)
+
+***Day 5***
+
+Today is a miserable day. I spent five hours trying to figure out how to use the sprite thing, but no luck. I even downloaded npm to convert stuff. Still no luck.
+
+I asked a friend, OP, who writes posts and tutorials about web development using python, django, etc, about web animations, but sadly he doesn't have any contructive suggestion.
+
+MAN! Finally. This pain in the ass sprite. If there's one thing I learned from spending all these hours today, don't use stupid sprite-ing tools that doesn't give you the matching CSS. Don't use Sprite cow if your sprite comes from a crappy sprite-ing website. DO IT YOURSELF! Do it in Photoshop.
+
+I'm making real progress here. See *expSprite2.html*, which is archived (well, still some changes will be applied).
+
+I tried R-SWAP (rapidly swapping images using JS), SVG, GIF, but I eventually landed on Sprite.
+
+Not to brag, but after so many research and experiments, I'm a bit of a sprite expert myself now. I'm gonna add that to my LinkedIn page.
