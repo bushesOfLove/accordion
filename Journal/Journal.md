@@ -65,3 +65,29 @@ I'm making real progress here. See *expSprite2.html*, which is archived (well, s
 I tried R-SWAP (rapidly swapping images using JS), SVG, GIF, but I eventually landed on Sprite.
 
 Not to brag, but after so many research and experiments, I'm a bit of a sprite expert myself now. I'm gonna add that to my LinkedIn page.
+
+***Day 10***
+
+500px for the thing is good.
+
+***Day 255***
+
+Whoopsies.
+
+Shit theres gaps in audio, fuck!
+
+unsolvable because of compression shit mp3 shit thing.
+
+So it has to be long enough, shit fuck!
+
+Oh wait it could not be a bug, but a feature!
+
+TO DO:
+Find which chords I want to add
+
+Adapt JS so that it fits with database settings
+Add audio
+
+***DAY 1687***
+
+I'm finished

@@ -14,7 +14,7 @@ part of it is in the static file. -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
         <link rel="shortcut icon" type="image/jpg" href="/static/accordion/img/logo.png"/>
         <link href="/static/accordion/styles.css" rel="stylesheet">
-        {% block Script %}
+        {% block ScriptCSS %}
         {% endblock %}
     </head>
     <body>
@@ -25,7 +25,7 @@ part of it is in the static file. -->
                 </div>
                 <div class="col-3" style="text-align: left;">
                     <br>
-                    <a id="name" href="{% url 'demo' %}">
+                    <a id="name" href="{% url 'layout' %}">
                         Accordion
                     </a>
                 </div>
@@ -44,7 +44,7 @@ part of it is in the static file. -->
                     <div class="col-4" style="text-align: right;">
                         <br>
                         <a class="me" href="/">
-                            me
+                            {{ user }}
                         </a>
                         <br>
                         <a class="me" href="{% url 'logout' %}">
@@ -84,8 +84,11 @@ part of it is in the static file. -->
         {% block body %}
         {% endblock %}
 
+        <div style="height: 380px;">
+
+        </div>
         
-        <div class="container-fluid" style="background-color: rgb(41, 66, 52); color: white; text-align: center; height: 380px; box-shadow: 0px 0px 10px black;">
+        <div class="container-fluid" style="background-color: rgb(41, 66, 52); color: white; text-align: center; height: 380px; box-shadow: 0px 0px 10px black; position: fixed; bottom: 0;">
             <div class="row">
                 <div class="col-2">
                     
@@ -108,10 +111,10 @@ part of it is in the static file. -->
                         <a href="{% url 'demo' %}" class="btm-thi">DEMO</a>
                     </div>
                     <div class="pad">
-                        <a class="btm-thi">Author</a>
+                        <a class="btm-thi" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Author</a>
                     </div>
                     <div class="pad">
-                        <a class="btm-thi">Credits</a>
+                        <a class="btm-thi" href="{% url 'features' %}">Guide</a>
                     </div>
                 </div>
                 <div class="col-2">
@@ -132,10 +135,10 @@ part of it is in the static file. -->
                         <a class="btm-thi" href="https://github.com/bushesOfLove/accordion" target="_blank">Source Code</a>
                     </div>
                     <div class="pad">
-                        <a class="btm-thi">Copyright</a>
+                        <a class="btm-thi" href="https://musescore.com/user/41810439" target="_blank">My Scores</a>
                     </div>
                     <div class="pad">
-                        <a class="btm-thi">ʕ•ᴥ•ʔ</a>
+                        <a class="btm-thi" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">ʕ•ᴥ•ʔ</a>
                     </div>
                 </div>
                 <div class="col-2">

@@ -1,0 +1,28 @@
+{% extends "accordion/layout.html" %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <h1>{{ keyboard.C }}</h1>
+        <div id="Iwrapper">
+            <h2 class="h2i">New Post</h2>
+            <form action="{% url 'new_post' %}" method="POST">
+                {% csrf_token %}
+                <div class="title">
+                    {{ form.title }}
+                </div>
+                <div class="content">
+                    {{ form.content }}
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Post" id="button">
+                </div>
+            </form>
+        </div>
+    {% else %}
+        <hr>
+            <div class="title">
+                <a href="{% url 'login' %}" style="color: darkgreen;">Login to create new posts</a>
+            </div>
+        <hr>
+    {% endif %}
+{% endblock %}

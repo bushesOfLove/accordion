@@ -1,9 +1,14 @@
 {% extends "accordion/layout.html" %}
 
 {% block body %}
-    <h1>FORUM</h1>
-    <h1>FORUM</h1>
-    <h1>FORUM</h1>
-    <h1>FORUM</h1>
-    <h1>FORUM</h1>
+    <h2 style="text-align: center; padding-top: 2%;"><a href="{% url 'share' %}" class="postthought" >Share An Accordion Score!</a></h2>
+    {% for post in posts %}
+        <div class="wrapper">
+            <div class="wrapper2">
+                <h3>{{ post.title }}</h3>
+                <h5>{{ post.content }}</h5>
+                <h6>By <strong>{{ post.publisher }}</strong> On <strong>{{ post.timestamp }}</strong></h6>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

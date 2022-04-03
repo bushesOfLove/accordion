@@ -1,9 +1,60 @@
 {% extends "accordion/layout.html" %}
 
+{% block ScriptCSS %}
+    <style>
+        #sprite {
+            background: url('/static/accordion/img/accSprite.png');
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            animation: sprite 10s steps(51) infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes sprite {
+            to { 
+                background-position: -25500px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var el = document.getElementById('sprite');
+
+            var data = JSON.parse("{{key|escapejs}}");
+            console.log(data);
+
+            var dict = {};
+
+            for (const [key, value] of Object.entries(data)) {
+                console.log(key, value);
+                var tempstr = "static/accordion/audio/" + value + ".m4a";
+                dict[value] = new Audio(tempstr);
+            }
+
+            document.onkeydown = function(e){
+                e = e || window.event;
+                el.style.animationPlayState = 'running';
+                // e.key is the key itself i found in developer tool json file i'm smart dont even google
+                console.log(e.key)
+                dict[data[e.key]].play();
+            };
+
+            document.onkeyup = function(e){
+                e = e || window.event;
+                var key = e.which || e.keyCode;
+                el.style.animationPlayState = 'paused';
+                dict[data[e.key]].pause();
+                dict[data[e.key]].currentTime = 0;
+            };
+        });
+    </script>
+    
+{% endblock %}
+
 {% block body %}
-    <h1>BOKI</h1>
-    <h1>BOKI</h1>
-    <h1>BOKI</h1>
-    <h1>BOKI</h1>
-    <h1>BOKI</h1>
+    <div style="text-align: center;">
+        <div id="sprite" title="Animated Accordion Sprite by Ryan"></div>
+    </div>
+    
 {% endblock %}

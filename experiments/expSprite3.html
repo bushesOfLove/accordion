@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Sprite</title>
+        <style>
+            #sprite {
+                background: url('theIMG.png');
+                width: 500px;
+                height: 500px;
+                animation: sprite 10s steps(51) infinite;
+                animation-play-state: paused;
+            }
+
+            @keyframes sprite {
+                to { 
+                    background-position: -25500px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sprite</h1>
+        <div id="sprite" title="Animated Accordion by Ryan"></div>
+        <button onclick="play()">Play</button>
+
+
+        <script>
+            var el = document.getElementById('sprite');
+            function play() {
+                el.style.animationPlayState = 'running';
+                setTimeout(function() {
+                    el.style.animationPlayState = 'paused';
+                }, 5000);
+            }
+        </script>
+    </body>
+</html>

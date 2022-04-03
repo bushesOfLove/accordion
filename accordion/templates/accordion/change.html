@@ -1,0 +1,51 @@
+{% extends "accordion/layout.html" %}
+
+{% block body %}
+    <h2 class="changeLayout">Current Keyboard Layout</h2>
+    {% if user.is_authenticated %}
+        <div style="padding-left: 20%; padding-right: 20%;">
+            <div class="grid-container">
+                <div class="grid-item">Note</div>
+                <div class="grid-item">Key on Keyboard</div>
+                {% for note, key in newkey.items %}
+                    <div class="grid-item">{{ note }}</div>
+                    <div class="grid-item">{{ key }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        
+                
+        <div id="Iwrapper">
+            <h2 class="h2i">Changing My Keyboard Layouts</h2>
+            <form action="{% url 'new_layout' %}" method="POST">
+                {% csrf_token %}
+                <div class="title">
+                    {{ form.changekey }}
+                </div>
+                <div class="content">
+                    {{ form.newkey }}
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Change" id="button">
+                </div>
+            </form>
+        </div>
+    {% else %}
+        <div style="padding-left: 20%; padding-right: 20%;">
+            <div class="grid-container">
+                <div class="grid-item">Note</div>
+                <div class="grid-item">Key on Keyboard</div>
+                {% for note, key in newkey.items %}
+                    <div class="grid-item">{{ note }}</div>
+                    <div class="grid-item">{{ key }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <hr>
+            <div class="title">
+                <a href="{% url 'login' %}" style="color: darkgreen;">Login to customize keyboard layouts</a>
+            </div>
+        <hr>
+    {% endif %}
+    
+{% endblock %}
